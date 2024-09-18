@@ -7,7 +7,7 @@ import { Footer, Navbar } from "./components";
 
 function App() {
   return (
-    <main className=" bg-slate-300/20 grid">
+    <main className=" bg-slate-300/20 ">
       <BrowserRouter>
         <Navbar />
         <Routes>

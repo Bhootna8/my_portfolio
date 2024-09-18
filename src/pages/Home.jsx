@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import Island from "../models/Island";
-import { Bird, Plane, Sky } from "../models";
+import { Bird, Person, Plane, Sky } from "../models";
 import { HomeInfo, Loader } from "../components";
 
 const Home = () => {
@@ -65,6 +65,8 @@ const Home = () => {
         <Suspense fallback={<Loader />}>
           <ambientLight intensity={0.5} />
           <directionalLight position={[1, 3, 1]} intensity={2} />
+          <spotLight position={[0,-1,1]}/>
+          
           <hemisphereLight
             skyColor={"white"}
             groundColor={"black"}
@@ -80,6 +82,7 @@ const Home = () => {
             rotation={rotation}
           />
           <Bird />
+          <Person isRotating={isRotating} position={[0.2,-1.46,0]} rotation={[0,1.39,0]} />
           <Plane
             planePosition={planePosition}
             isRotating={isRotating}
